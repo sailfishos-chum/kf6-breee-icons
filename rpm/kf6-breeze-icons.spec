@@ -18,24 +18,14 @@ Release: 0%{?dist}
 License: LGPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-3.0-or-later AND CC-BY-SA-4.0
 URL:     https://api.kde.org/frameworks/breeze-icons/html/
 Source0:    %{name}-%{version}.tar.bz2
+Provides:      breeze-icon-theme
 
-## upstream patches
-
-## upstreamable patches
-
-
-BuildRequires: extra-cmake-modules >= %{version}
+BuildRequires: extra-cmake-modules >= %{kf_version}
 BuildRequires: kf6-rpm-macros
 BuildRequires: qt6-qtbase-devel
 
 # for generate-24px-versions.py
 BuildRequires: python3-lxml
-
-%if %{with install_icons}
-Requires: breeze-icon-theme = %{version}-%{release}
-%else
-Requires: breeze-icon-theme
-%endif
 
 %description
 %{summary}.
@@ -47,8 +37,6 @@ Summary:     Breeze icon theme
 License:     LGPL-2.1-or-later AND LGPL-3.0-or-later AND CC-BY-SA-4.0
 BuildArch:   noarch
 Requires:    hicolor-icon-theme
-# Needed for proper Fedora logo
-Requires:    system-logos
 # upstream name
 Provides:    breeze-icons = %{version}-%{release}
 # package changed arch
