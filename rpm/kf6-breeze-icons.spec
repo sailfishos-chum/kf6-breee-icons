@@ -27,6 +27,8 @@ BuildRequires: qt6-qtbase-devel
 # for generate-24px-versions.py
 BuildRequires: python3-lxml
 
+Requires:      qt6-qtsvg
+
 %description
 %{summary}.
 
@@ -36,7 +38,6 @@ Summary:     Breeze icon theme
 # analysis above
 License:     LGPL-2.1-or-later AND LGPL-3.0-or-later AND CC-BY-SA-4.0
 BuildArch:   noarch
-Requires:    hicolor-icon-theme
 # upstream name
 Provides:    breeze-icons = %{version}-%{release}
 # package changed arch
